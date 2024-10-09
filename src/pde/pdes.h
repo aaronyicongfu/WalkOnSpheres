@@ -5,12 +5,12 @@
 
 #include "pde.h"
 
-struct TaylorVortexPDE2 : PDE<2>{
-    TaylorVortexPDE2():PDE(PDETypes::Poisson){};
+struct TaylorVortexPDE2 : PDE<2> {
+  TaylorVortexPDE2() : PDE(PDETypes::Poisson){};
 
-    virtual double laplacianOP(arrayd<2> &x, double t) override;
-    virtual double truth(arrayd<2> &x, double t) override;
-    virtual arrayd<2> gradTruth(arrayd<2> & x, double t) override;
+  virtual double laplacianOP(arrayd<2> &x, double t) override;
+  virtual double truth(arrayd<2> &x, double t) override;
+  virtual arrayd<2> gradTruth(arrayd<2> &x, double t) override;
 };
 
 #endif

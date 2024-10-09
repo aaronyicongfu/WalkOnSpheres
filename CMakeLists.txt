@@ -3,11 +3,12 @@
 #
 cmake_minimum_required (VERSION 3.8)
 
+set(CMAKE_CXX_STANDARD 11)
 project ("WOS")
 
 find_package(SDL2 REQUIRED)
 
-SET ( PDE_CORE_HEADER 
+SET ( PDE_CORE_HEADER
     src/core/pde.h
     src/core/boundary.h
 )
@@ -27,7 +28,7 @@ target_include_directories(pde INTERFACE
 )
 
 add_executable(wos_exe src/main.cpp src/wos.cpp src/window.cpp)
-target_include_directories(wos_exe PRIVATE 
+target_include_directories(wos_exe PRIVATE
     ${SDL2_INCLUDE_DIRS}
 )
 target_link_libraries(wos_exe ${SDL2_LIBRARIES} pde)
