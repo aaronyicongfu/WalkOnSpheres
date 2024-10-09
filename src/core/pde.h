@@ -21,10 +21,10 @@ struct PDE {
   PDE(PDETypes type) : type(type){};
   virtual double laplacianOP(arrayd<N> &x, double t) = 0;
   virtual double truth(arrayd<N> &x, double t) {
-    throw std::exception("No analytical solution exist for this PDE.");
+    throw std::runtime_error("No analytical solution exist for this PDE.");
   }
   virtual arrayd<N> gradTruth(arrayd<N> &x, double t) {
-    throw std::exception("No analytical solution exist for this PDE.");
+    throw std::runtime_error("No analytical solution exist for this PDE.");
   }
 };
 

@@ -82,7 +82,8 @@ int main() {
   arrayd<2> bb{{minBound, maxBound}};
   WosBoxBoundary2D taylorVortexBoundary([](arrayd<2> const &x) { return 0; },
                                         bb, 0.005);
-  WOS2d taylorVortexWOS(&TaylorVortexPDE2(), &taylorVortexBoundary, generator);
+  auto pde = TaylorVortexPDE2();
+  WOS2d taylorVortexWOS(&pde, &taylorVortexBoundary, generator);
   while (!quit && numSamples++) {
     input(window);
     errorMax = errorMaxX = errorMaxY = 0;
