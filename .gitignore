@@ -3,3 +3,5 @@ out/
 build/
 .vscode/
 CMakeSettings.json/
+.cache/
+.clang-format
